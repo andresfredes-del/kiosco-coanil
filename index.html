@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portal Quiosco Coanil</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary-blue: #0056a6;
+      --secondary-blue: #0080ff;
+      --accent-cyan: #00a8cc;
+      --bg-gradient: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
+      --card-bg: rgba(255, 255, 255, 0.08);
+      --card-border: rgba(255, 255, 255, 0.18);
+      --card-hover-bg: rgba(255, 255, 255, 0.16);
+      --text-main: #ffffff;
+      --text-muted: #cbd5e1;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; user-select: none; }
+
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
+      background: var(--bg-gradient);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      color: var(--text-main);
+      overflow: hidden;
+      padding: 3rem 2rem;
+    }
+
+    .container {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      max-width: 1100px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .brand-header { margin-bottom: 3.5rem; }
+
+    .logo-container {
+      background: #ffffff;
+      padding: 1.2rem 2.5rem;
+      border-radius: 20px;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+      display: inline-block;
+      margin-bottom: 1.5rem;
+    }
+
+    .welcome-title { font-size: 2.2rem; font-weight: 800; margin-bottom: 0.5rem; }
+    .welcome-subtitle { font-size: 1.15rem; color: var(--text-muted); }
+
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2rem;
+      width: 100%;
+      max-width: 900px;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      backdrop-filter: blur(16px);
+      border-radius: 24px;
+      padding: 2.5rem 2rem;
+      text-decoration: none;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transition: all 0.3s ease;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    }
+
+    .card:hover {
+      background: var(--card-hover-bg);
+      transform: translateY(-8px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.4), 0 0 20px rgba(0, 168, 204, 0.3);
+    }
+
+    .icon-wrapper {
+      width: 90px;
+      height: 90px;
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.5rem;
+    }
+
+    .icon-wrapper svg { width: 48px; height: 48px; fill: none; stroke: #ffffff; stroke-width: 2; }
+    .card-title { font-size: 1.5rem; font-weight: 700; margin-bottom: 0.6rem; }
+    .card-desc { font-size: 0.95rem; color: var(--text-muted); line-height: 1.4; }
+    .footer { font-size: 0.9rem; color: rgba(255, 255, 255, 0.5); }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <header class="brand-header">
+      <div class="logo-container">
+        <!-- Logo vectorial de Coanil -->
+        <svg width="220" height="55" viewBox="0 0 220 55" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <g transform="translate(5, 5)">
+            <rect x="0" y="0" width="12" height="12" fill="#0056a6"/>
+            <rect x="15" y="0" width="12" height="12" fill="#00a8cc"/>
+            <rect x="30" y="0" width="12" height="12" fill="#0056a6"/>
+            <rect x="0" y="15" width="12" height="12" fill="#00a8cc"/>
+            <rect x="30" y="15" width="12" height="12" fill="#00a8cc"/>
+            <rect x="0" y="30" width="12" height="12" fill="#0056a6"/>
+            <rect x="15" y="30" width="12" height="12" fill="#00a8cc"/>
+            <rect x="30" y="30" width="12" height="12" fill="#0056a6"/>
+          </g>
+          <text x="58" y="32" font-family="sans-serif" font-weight="800" font-size="28" fill="#0056a6">coanil</text>
+          <text x="59" y="44" font-family="sans-serif" font-weight="600" font-size="11" fill="#00a8cc" letter-spacing="1">FUNDACIÓN</text>
+        </svg>
+      </div>
+      <h1 class="welcome-title">Portal de Autoservicio Coanil</h1>
+      <p class="welcome-subtitle">Selecciona la plataforma a la que deseas ingresar</p>
+    </header>
+
+    <main class="cards-grid">
+      <!-- Opción 1: Web Coanil -->
+      <a href="https://www.coanil.cl" class="card">
+        <div class="icon-wrapper">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+        </div>
+        <h2 class="card-title">Sitio Web Coanil</h2>
+        <p class="card-desc">Noticias, proyectos e información institucional de la fundación.</p>
+      </a>
+
+      <!-- Opción 2: Buk Coanil -->
+      <a href="https://coanil.buk.cl/users/sign_in" class="card">
+        <div class="icon-wrapper">
+          <svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+        </div>
+        <h2 class="card-title">Portal Buk Coanil</h2>
+        <p class="card-desc">Gestión de personas: marcaciones, liquidaciones y licencias.</p>
+      </a>
+    </main>
+  </div>
+
+  <footer class="footer">
+    © 2026 Fundación Coanil — Sistema Quiosco
+  </footer>
+
+</body>
+</html>
