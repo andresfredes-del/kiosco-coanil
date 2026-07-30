@@ -28,8 +28,8 @@
       align-items: center;
       justify-content: space-between;
       color: var(--text-main);
-      overflow: hidden;
-      padding: 3rem 2rem;
+      overflow-y: auto;
+      padding: 2.5rem 1.5rem;
     }
 
     .container {
@@ -41,28 +41,29 @@
       flex-direction: column;
       align-items: center;
       text-align: center;
+      margin-bottom: 2rem;
     }
 
-    .brand-header { margin-bottom: 3.5rem; }
+    .brand-header { margin-bottom: 2.5rem; }
 
     .logo-container {
       background: #ffffff;
-      padding: 1.2rem 2.5rem;
+      padding: 1rem 2rem;
       border-radius: 20px;
       box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
       display: inline-block;
-      margin-bottom: 1.5rem;
+      margin-bottom: 1.2rem;
     }
 
-    .welcome-title { font-size: 2.2rem; font-weight: 800; margin-bottom: 0.5rem; }
+    .welcome-title { font-size: 2.2rem; font-weight: 800; margin-bottom: 0.5rem; text-shadow: 0 2px 10px rgba(0,0,0,0.2); }
     .welcome-subtitle { font-size: 1.15rem; color: var(--text-muted); }
 
     .cards-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 2rem;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
       width: 100%;
-      max-width: 900px;
+      max-width: 1050px;
     }
 
     .card {
@@ -70,7 +71,7 @@
       border: 1px solid var(--card-border);
       backdrop-filter: blur(16px);
       border-radius: 24px;
-      padding: 2.5rem 2rem;
+      padding: 2rem 1.5rem;
       text-decoration: none;
       color: white;
       display: flex;
@@ -82,24 +83,25 @@
 
     .card:hover {
       background: var(--card-hover-bg);
-      transform: translateY(-8px);
-      box-shadow: 0 20px 40px rgba(0,0,0,0.4), 0 0 20px rgba(0, 168, 204, 0.3);
+      transform: translateY(-6px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.3), 0 0 20px rgba(0, 168, 204, 0.3);
     }
 
     .icon-wrapper {
-      width: 90px;
-      height: 90px;
+      width: 75px;
+      height: 75px;
       border-radius: 20px;
-      background: rgba(255, 255, 255, 0.1);
+      background: rgba(255, 255, 255, 0.15);
       display: flex;
       align-items: center;
       justify-content: center;
-      margin-bottom: 1.5rem;
+      margin-bottom: 1.2rem;
     }
 
-    .icon-wrapper svg { width: 48px; height: 48px; fill: none; stroke: #ffffff; stroke-width: 2; }
-    .card-title { font-size: 1.5rem; font-weight: 700; margin-bottom: 0.6rem; }
-    .card-desc { font-size: 0.95rem; color: var(--text-muted); line-height: 1.4; }
+    .icon-wrapper svg { width: 40px; height: 40px; fill: none; stroke: #ffffff; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+    .card-title { font-size: 1.35rem; font-weight: 700; margin-bottom: 0.5rem; }
+    .card-desc { font-size: 0.9rem; color: var(--text-muted); line-height: 1.4; }
+
     /* Footer Institucional */
     .footer {
       position: relative;
@@ -108,6 +110,8 @@
       font-weight: 600;
       color: #0056a6;
       letter-spacing: 0.5px;
+      margin-top: 1rem;
+      text-align: center;
     }
   </style>
 </head>
@@ -116,7 +120,7 @@
   <div class="container">
     <header class="brand-header">
       <div class="logo-container">
-        <img src="logo.png" alt="Logo Coanil" style="max-height: 100px; width: auto; display: block;">
+        <img src="logo.png" alt="Logo Coanil" style="max-height: 80px; width: auto; display: block;">
       </div>
       <h1 class="welcome-title">Portal de Autoservicio Coanil</h1>
       <p class="welcome-subtitle">Selecciona la plataforma a la que deseas ingresar</p>
@@ -144,30 +148,29 @@
       <!-- Opción 3: Correo Coanil -->
       <a href="https://gmail.com" class="card">
         <div class="icon-wrapper">
-          <svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+          <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
         </div>
         <h2 class="card-title">Correo Coanil</h2>
-        <p class="card-desc">Acceso a correo plataforma Google Gmail</p>
+        <p class="card-desc">Acceso a correo plataforma Google Gmail.</p>
       </a>
 
-      <!-- Opción : Solicitudes Coanil -->
+      <!-- Opción 4: Solicitudes Canal de Consultas -->
       <a href="https://script.google.com/a/macros/coanil.cl/s/AKfycbwxys0PijaFp8NtaCBUoYJ89Q2Z-4ZrzcLKYkGfsr_y7iRuWbkAbAc0XvuhLeBgwDct/exec" class="card">
         <div class="icon-wrapper">
-          <svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+          <svg viewBox="0 0 24 24"><path d="M3 18v-6a9 9 0 0 1 18 0v6"></path><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"></path></svg>
         </div>
-        <h2 class="card-title">Solicitudes Canal de Consultas Coanil</h2>
-        <p class="card-desc">Solicitudes mesa de ayuda Sistemas y Personas</p>
+        <h2 class="card-title">Canal de Consultas</h2>
+        <p class="card-desc">Solicitudes mesa de ayuda Sistemas y Personas.</p>
       </a>
 
-      <!-- Opción 5: Solicitudes Coanil -->
+      <!-- Opción 5: Solicitudes Operacionales Educa -->
       <a href="https://script.google.com/a/macros/coanil.cl/s/AKfycbwxys0PijaFp8NtaCBUoYJ89Q2Z-4ZrzcLKYkGfsr_y7iRuWbkAbAc0XvuhLeBgwDct/exec" class="card">
         <div class="icon-wrapper">
-          <svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+          <svg viewBox="0 0 24 24"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg>
         </div>
-        <h2 class="card-title">Solicitudes Operacionales Educa</h2>
-        <p class="card-desc">Acceso a solicitudes Operacionales Educa</p>
+        <h2 class="card-title">Solicitudes Educa</h2>
+        <p class="card-desc">Acceso a solicitudes Operacionales Educa.</p>
       </a>
-      
     </main>
   </div>
 
