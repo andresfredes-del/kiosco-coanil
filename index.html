@@ -119,6 +119,26 @@
       opacity: 1;
     }
 
+    .mascota-coanil {
+  position: fixed;
+  bottom: 20px;       /* Distancia desde el fondo */
+  right: 30px;        /* Distancia desde la derecha */
+  height: 280px;      /* Ajusta la altura según cómo se vea en pantalla */
+  width: auto;
+  z-index: 100;       /* Asegura que esté por encima del fondo */
+  pointer-events: none; /* Evita que interfiera con los clics del usuario */
+  filter: drop-shadow(0px 8px 16px rgba(0, 0, 0, 0.2)); /* Sombra suave para darle volumen */
+}
+
+/* Opcional: Ajuste para pantallas más pequeñas si fuera necesario */
+@media (max-width: 1024px) {
+  .mascota-coanil {
+    height: 200px;
+    right: 15px;
+    bottom: 15px;
+  }
+}
+
     /* Footer Institucional */
     .footer {
       position: relative;
@@ -215,6 +235,8 @@
       </a>
     </main>
   </div>
+        <!-- Mascota Coanil Flotante -->
+        <img src="Figura_Coanil_Saludando-removebg-preview.png" alt="Mascota Coanil" class="mascota-coanil">
 
   <footer class="footer">
     © 2026 Fundación Coanil — Sistemas y Operaciones - Proyecto Kiosco 2026
