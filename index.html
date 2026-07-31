@@ -123,13 +123,19 @@
   position: fixed;
   bottom: 20px;
   right: 30px;
-  height: 280px;
+  height: 320px;        /* Un poco más grande para que destaque mejor */
   width: auto;
   z-index: 100;
   pointer-events: none;
-  
-  /* Este truco elimina el color negro fusionándolo con el fondo azul */
-  mix-blend-mode: screen; 
+
+  /* Mezcla para quitar el negro */
+  mix-blend-mode: screen;
+
+  /* Aumenta el brillo y contraste para que la figura no se trasluzca */
+  filter: brightness(1.35) contrast(1.25);
+
+  /* Recorte del destello/logo de la derecha */
+  clip-path: inset(0 40px 0 0);
 }
 
 /* Opcional: Ajuste para pantallas más pequeñas si fuera necesario */
